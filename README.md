@@ -17,6 +17,6 @@ Utenti (folder)
 Messaggi (folder)
 
 INSTALL INSTRUCTION:
-Compile the Client with "gcc –o Client Client.c -lm –std=gnu99" and then execute it with "./Client"
-Compile the Server with "gcc –o Server Server.c –lm –std=gnu99" and then execute it with "./Server"
+Compile the Client with "gcc –o Client Client.c -lm –std=gnu99" and then execute it with "./Client".
+Compile the Server with "gcc –o Server Server.c –lm –std=gnu99" and then execute it with "./Server".
 The program is compatible on Linux systems only.
