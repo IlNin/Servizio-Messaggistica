@@ -109,12 +109,12 @@ void registrazione() {
    strcpy(path2, "./Messaggi/");
    strcat(path2, pack.Utente.nome);
    if (mkdir(path2, 0777) == -1) {
-	printf("- creazione cartella fallita -\n");
-	remove(path); // rimuove il file con password
-	pack.istruzione = '2'; }
+    printf("- creazione cartella fallita -\n");
+    remove(path); // rimuove il file con password
+    pack.istruzione = '2'; }
    else {
-	printf("- cartella creata con successo -\n");
-	pack.istruzione = '1'; } } }
+    printf("- cartella creata con successo -\n");
+    pack.istruzione = '1'; } } }
  
  close(ds_file);  
  inviaPack();
@@ -204,21 +204,21 @@ void salvaMessaggio() {
     printf("- scrittura oggetto -\n");
     char* separa = "OBJECT:\n";
     write(ds_file, separa, strlen(separa));
-	write(ds_file, pack.Messaggio.oggetto, strlen(pack.Messaggio.oggetto));
+    write(ds_file, pack.Messaggio.oggetto, strlen(pack.Messaggio.oggetto));
 	
-	printf("- scrittura corpo -\n");
-	separa = "\nTEXT:\n";
-	write(ds_file, separa, strlen(separa));
-	write(ds_file, pack.Messaggio.testo, strlen(pack.Messaggio.testo));
+    printf("- scrittura corpo -\n");
+    separa = "\nTEXT:\n";
+    write(ds_file, separa, strlen(separa));
+    write(ds_file, pack.Messaggio.testo, strlen(pack.Messaggio.testo));
 	
-	printf("- scrittura mittente -\n");
-	separa = "\nSENDER:\n";
-	write(ds_file, separa, strlen(separa));
-	write(ds_file, pack.Messaggio.mittente, strlen(pack.Messaggio.mittente));
+    printf("- scrittura mittente -\n");
+    separa = "\nSENDER:\n";
+    write(ds_file, separa, strlen(separa));
+    write(ds_file, pack.Messaggio.mittente, strlen(pack.Messaggio.mittente));
 	
-	printf("- messaggiato smistato correttamente -\n");
-	close(ds_file);
-	pack.istruzione = '1'; } }
+    printf("- messaggiato smistato correttamente -\n");
+    close(ds_file);
+    pack.istruzione = '1'; } }
  
  inviaPack();
  sigprocmask(SIG_UNBLOCK, &set, NULL); }

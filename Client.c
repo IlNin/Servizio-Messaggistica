@@ -32,45 +32,45 @@ int main() {
   else if (strcmp(input, "1\n") == 0) { // l'utente si registra
    printf("\n- inizio registrazione -\n");
    if (registrazione() == 0) {
-	printf("\n- registrazione fallita -\n");
-	continue; }
+    printf("\n- registrazione fallita -\n");
+    continue; }
    printf("\n- registrazione effettuata con successo -\n"); }
    
   else if (strcmp(input, "2\n") == 0) { // l'utente effettua il login
    printf("\n- inizio login -\n");
    if (login() == 0) { // login fallito
     printf("\n- login fallito -\n");
-	continue; }
+    continue; }
    
    // GESTIONE POSTA
    printf("\n- login effettuato con successo - \n");
    printf("Benvenuto alla tua casella di posta, %s:\n", nomeUtente);
    while(1) {
-	printf("- premere 1 per visualizzare i tuoi messaggi\n- premere 2 per scrivere un nuovo messaggio\n- premere 0 per effettuare il logout\n");
-	if (fgets(input, MAX, stdin) == NULL) {
-	 printf("\n- input non riconosciuto - \n"); }
+    printf("- premere 1 per visualizzare i tuoi messaggi\n- premere 2 per scrivere un nuovo messaggio\n- premere 0 per effettuare il logout\n");
+    if (fgets(input, MAX, stdin) == NULL) {
+     printf("\n- input non riconosciuto - \n"); }
 	 
-	else if ((strlen(input)+1 >= MAX)) {
-	 printf("\n- input troppo grande - \n");
-	 while (getchar() != '\n'); }
+    else if ((strlen(input)+1 >= MAX)) {
+     printf("\n- input troppo grande - \n");
+     while (getchar() != '\n'); }
 	 
-	else if (strcmp(input, "0\n") == 0) {
-	  printf("\n- logout eseguito con successo - \n");
-	  break; }
+    else if (strcmp(input, "0\n") == 0) {
+     printf("\n- logout eseguito con successo - \n");
+     break; }
 	  
-	else if (strcmp(input, "1\n") == 0) {
-	  printf("\n- lettura messaggi -\n");
-	  visualizzaMessaggi(); }
+    else if (strcmp(input, "1\n") == 0) {
+     printf("\n- lettura messaggi -\n");
+     visualizzaMessaggi(); }
 	  
-	else if (strcmp(input, "2\n") == 0) {
-	  printf("\n- scrittura messaggio -\n");
-	  if (scriviMessaggio() == 0) {
-	   printf("\n- messaggio non inviato -\n");
-	   continue; }
-	  printf("\n- messaggio inviato correttamente -\n"); }
+    else if (strcmp(input, "2\n") == 0) {
+     printf("\n- scrittura messaggio -\n");
+     if (scriviMessaggio() == 0) {
+      printf("\n- messaggio non inviato -\n");
+      continue; }
+     printf("\n- messaggio inviato correttamente -\n"); }
 	  
-	else {
-	 printf("\n- input non valido -\n"); } } }
+    else {
+     printf("\n- input non valido -\n"); } } }
 
   else {
    printf("\n- input non valido -\n"); } } }

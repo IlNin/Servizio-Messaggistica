@@ -270,9 +270,9 @@ void visualizzaMessaggi() {
  int contatore = 0;
  for (int i = 1; i <= MAX; i++) { // ci sono dei messaggi da leggere
   if (strcmp(pack.listaMessaggi[i-1].oggetto, "\0") == 0) {
-	printf("\n- fine lista messaggi -\n");
+    printf("\n- fine lista messaggi -\n");
     contatore = i-1;
-	break; }
+    break; }
   printf("\nMessaggio n.%d:\n", i);
   printf("OGGETTO: %s", pack.listaMessaggi[i-1].oggetto);
   printf("MITTENTE: %s\n", pack.listaMessaggi[i-1].mittente);
@@ -296,8 +296,8 @@ void visualizzaMessaggi() {
   else if (strcmp(input, "1\n") == 0) { // l'utente desidera cancellare un messaggio
    pack.istruzione = 'D';
    while(1) {
-	printf("\n- inserisci il numero del messaggio che vuoi eliminare\n");
-	if (fgets(input, MAX, stdin) == NULL) {
+    printf("\n- inserisci il numero del messaggio che vuoi eliminare\n");
+    if (fgets(input, MAX, stdin) == NULL) {
      printf("\n- input non riconosciuto -\n"); }
   
     else if ((strlen(input)+1) >= MAX) {
@@ -305,16 +305,16 @@ void visualizzaMessaggi() {
      while (getchar() != '\n'); }
     
     else { // input riconosciuto
-	 char* input2 = ridimensiona(input); // toglie "\n" dall'input
-	 int n = atoi(input2); // converte l'input in int
-	 if (n == 0) {
-	  printf("\n- input non riconosciuto -\n"); }
-	 else if (n < 1 || n > contatore) { // caso in cui il messaggio n non esiste
-	  printf("\n- non esiste alcun messaggio con tale numero -\n"); }
-	 else {
-	  pack.messaggioDaEliminare = n;
-	  if (comunicazioneServer() == 0) {
-	   return; }
+     char* input2 = ridimensiona(input); // toglie "\n" dall'input
+     int n = atoi(input2); // converte l'input in int
+     if (n == 0) {
+      printf("\n- input non riconosciuto -\n"); }
+     else if (n < 1 || n > contatore) { // caso in cui il messaggio n non esiste
+      printf("\n- non esiste alcun messaggio con tale numero -\n"); }
+     else {
+      pack.messaggioDaEliminare = n;
+      if (comunicazioneServer() == 0) {
+       return; }
 	  
       if (pack.istruzione == '0') {
        printf("\n- errore durante rimozione messaggio -\n");
