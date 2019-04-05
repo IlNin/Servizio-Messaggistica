@@ -12,7 +12,7 @@ ClientUtil.c
 Client.c
 ServerUtil.h
 ServerUtil.c
-Server
+Server.c
 Utenti (folder)
 Messaggi (folder)
 
