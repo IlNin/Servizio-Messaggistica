@@ -12,7 +12,7 @@ Maybe I get impressed too easily, but it was mindblowing to send one message wit
 I also had to write a report (in Italian) that goes more in-depth on the creation of the program.
 
 
-<b>Install Instructions:<b><br/>
+<b>Install Instructions:</b><br/>
 Compile the Client with "gcc –o Client Client.c -lm –std=gnu99" and then execute it with "./Client".<br/>
 Compile the Server with "gcc –o Server Server.c –lm –std=gnu99" and then execute it with "./Server".<br/>
 The program is compatible on Linux systems only.
